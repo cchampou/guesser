@@ -34,11 +34,11 @@ func main() {
 		var again string
 		currentGame := createGame()
 		fmt.Println("Player 1, your guess")
-		fmt.Scanf("%s", &guess1str)
+		_, _ = fmt.Scanf("%s", &guess1str)
 		guess1, _ := strconv.Atoi(guess1str)
 		player1 := createPlayer(guess1)
 		fmt.Println("Player 2, your guess")
-		fmt.Scanf("%s", &guess2str)
+		_, _ = fmt.Scanf("%s", &guess2str)
 		guess2, _ := strconv.Atoi(guess2str)
 		player2 := createPlayer(guess2)
 		delta1 := math.Abs(float64(currentGame.Random - player1.Guess))
@@ -50,10 +50,10 @@ func main() {
 		} else {
 			fmt.Println("It's a tie")
 		}
-		fmt.Println("Result : " + strconv.Itoa(currentGame.Random))
 		fmt.Println("=====")
 		fmt.Println("Do you want to play again ? (y/n)")
-		fmt.Scanf("%s", &again)
+		_, _ = fmt.Scanf("%s", &again)
+		fmt.Println("=====")
 		if again != "y" {
 			break
 		}
